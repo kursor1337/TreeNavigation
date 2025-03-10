@@ -17,7 +17,7 @@ struct StackView<T : Hashable, Content: View> : View {
                 set: { _ in }
             )
         ) {
-            childView(childStack.active)
+            childView(childStack.items.first!)
                 .navigationDestination(for: T.self) { child in
                     childView(child)
                 }
